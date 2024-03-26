@@ -3,7 +3,7 @@ import type { FunctionComponent } from 'react';
 import { LoaderFunctionArgs } from '@remix-run/node';
 import invariant from 'tiny-invariant';
 
-import { ContactRecord, getContact } from '../data';
+import { ContactRecord, getContact } from '../data.server';
 
 // loader function to match contactID
 export const loader = async ({ params }: LoaderFunctionArgs) => {
