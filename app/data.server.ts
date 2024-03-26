@@ -67,7 +67,16 @@ export async function getContacts(query?: string | null) {
 
 export async function createEmptyContact() {}
 
-export async function getContact(id: string) {}
+export async function getContact(id: string) {
+  try {
+    const response = await fetch(url + 'api/contacts/'+id);
+    const data = await response.json();
+    const flattenAttributesData = flattenAttributes(data.data);
+    return flattenAttributesData;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 export async function updateContact(id: string, updates: ContactMutation) {}
 

@@ -9,6 +9,9 @@ import { ContactRecord, getContact } from '../data.server';
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   invariant(params.contactId, 'Missing params contact ID');
   const contact = await getContact(params.contactId);
+  if (!contact) {
+    throw new Response('No contact found', { status: 404 });
+  }
   return json({ contact });
 };
 
