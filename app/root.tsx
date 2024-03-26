@@ -29,9 +29,7 @@ export default function App() {
               <input id="q" aria-label="Search contacts" placeholder="Search" type="search" name="q" />
               <div id="search-spinner" aria-hidden hidden={true} />
             </Form>
-            <Form method="post">
-              <button type="submit">New</button>
-            </Form>
+            <Link to='contacts/create'><button>Create</button></Link>
           </div>
           <nav>
             {contacts.length ? (
