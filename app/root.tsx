@@ -1,4 +1,4 @@
-import { Form, Links, Meta, Scripts, ScrollRestoration } from '@remix-run/react';
+import { Form, Links, Meta, Scripts, ScrollRestoration, Outlet } from '@remix-run/react';
 import { LinksFunction } from '@remix-run/node';
 import appStylesHref from './app.css?url';
 
@@ -37,6 +37,10 @@ export default function App() {
           </nav>
         </div>
 
+        {/* contact page  */}
+        <div id="detail">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
       </body>
